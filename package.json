@@ -7,5 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "dylancherrydev",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "os": "^0.1.2",
+    "readline-sync": "^1.4.10"
+  }
 }
