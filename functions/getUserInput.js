@@ -11,6 +11,8 @@ const getUserInput = () => {
     const replacementText = readlineSync.question(`What would you like to replace it with?\n`)
 
     console.log(`Text to replace = ${textToReplace}\nReplacement text = ${replacementText}`)
+
+    return { homePath, mainDirectory, textToReplace, replacementText };
 }
 
 module.exports = { getUserInput };

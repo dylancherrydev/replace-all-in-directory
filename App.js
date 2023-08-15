@@ -1,7 +1,8 @@
 const { getUserInput } = require("./functions/getUserInput");
 
 const App = () => {
-    getUserInput();
-}
+    const { homePath, mainDirectory, textToReplace, replacementText } = getUserInput();
+    console.log(homePath, mainDirectory, textToReplace, replacementText)
+}   
 
 App();
