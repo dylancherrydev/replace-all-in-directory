@@ -1,0 +1,11 @@
+{
+  "name": "replace-all-in-directory",
+  "version": "1.0.0",
+  "description": "Node script to replace all instances of specific text within all file names, content and subdirectory names of a specified directory",
+  "main": "App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dylancherrydev",
+  "license": "ISC"
+}
