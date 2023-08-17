@@ -9,7 +9,7 @@ const locateSubdirectories = (mainDirectory) => {
 		files.forEach(file => {
 			const filePath = path.join(mainDirectory, file);
 			const stat = fs.statSync(filePath);
-			if (stat.isDirectory()) {
+			if (stat.isDirectory() && !filePath.includes('node_modules')) {
 				subdirectories.push(filePath);
 				getSubdirectoriesRecursively(filePath);
 			}
