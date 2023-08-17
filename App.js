@@ -8,11 +8,12 @@ const App = () => {
     const subdirectories = locateSubdirectories(mainDirectory);
     const filepaths = getFilePaths(subdirectories);
     const filteredSubdirectories = filterSubdirectories(subdirectories, textToReplace);
-    console.log("\nSubdirectories that will have their name changed:" + "\x1b[31m")
+
+    console.log("\nSubdirectories that will have their name changed:")
     filteredSubdirectories.forEach(subdirectory => {
-        console.log(subdirectory)
+        console.log("\x1b[31m" + subdirectory + "\x1b[0m")
     })
-    // filteredFiles = filterFiles();
+    filteredFiles = filterFiles();
 
 }   
 

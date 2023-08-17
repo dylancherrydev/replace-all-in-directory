@@ -4,20 +4,25 @@ const path = require("path");
 const locateSubdirectories = (mainDirectory) => {
 	const subdirectories = [];
 
-	getSubdirectoriesRecursively = (mainDirectory) => {
-		const files = fs.readdirSync(mainDirectory);
-		files.forEach(file => {
-			const filePath = path.join(mainDirectory, file);
+	const getSubdirectoriesRecursively = (directory) => {
+		const files = fs.readdirSync(directory);
+		files.forEach((file) => {
+			const filePath = path.join(directory, file);
 			const stat = fs.statSync(filePath);
-			if (stat.isDirectory() && !filePath.includes('node_modules')) {
+			if (
+				stat.isDirectory() &&
+				!["node_modules", ".git", ".github", ".vscode"].some((item) =>
+					filePath.includes(item)
+				)
+			) {
 				subdirectories.push(filePath);
 				getSubdirectoriesRecursively(filePath);
 			}
-		})
-	}
-	getSubdirectoriesRecursively(mainDirectory)
-	return subdirectories
-};
+		});
+	};
 
+	getSubdirectoriesRecursively(mainDirectory);
+	return subdirectories;
+};
 
 module.exports = { locateSubdirectories };
